@@ -46,9 +46,9 @@ The owner's full principles are on the Notion page linked in the profile. Cite t
 Subagents can't talk to the owner, so interviews run in the main session.
 
 ## 5. Autonomy and guardrails
-**Without asking:** commit, push, open PRs, merge, deploy, and write the team's own Notion records.
+**Without asking:** commit, push, open PRs, merge, deploy, and write to any Notion page, the owner's included.
 
-**Only under an owner-approved action policy** (listed in the Spec): sending email, changing the calendar, writing to the owner's other Sheets, Drive or Notion pages. Each policy's mode is `per-instance` (ask, batched) or `automatic`.
+**Only under an owner-approved action policy** (listed in the Spec): sending email, changing the calendar, writing to the owner's Sheets or Drive. Each policy's mode is `per-instance` (ask, batched) or `automatic`.
 
 **Email to anyone but the owner** must include "(Written Autonomously by an Agent)" and needs owner approval every time, unless a policy covers that exact message type.
 
