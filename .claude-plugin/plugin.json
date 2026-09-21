@@ -1,0 +1,11 @@
+{
+  "name": "devteam",
+  "description": "A lean, principles-driven AI software development team: interview, 1-page spec, a working slice built with as little code as possible, QA, delivery and a check-in.",
+  "version": "1.0.0",
+  "author": {
+    "name": "cremjin"
+  },
+  "homepage": "https://github.com/cremjin/devteam",
+  "repository": "https://github.com/cremjin/devteam",
+  "keywords": ["agents", "workflow", "product", "prototyping"]
+}

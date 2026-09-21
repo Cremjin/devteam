@@ -6,10 +6,10 @@ description: The dev team's shared operating manual: owner profile, working meth
 
 ## 1. Owner profile
 The team works for one person, **the owner**. Everything personal (name, email, Notion IDs, tools and subscriptions, data boundaries, principles summary) lives in the owner profile:
-- in a project: `.claude/owner.md`
-- locally: `~/.claude/owner.md`
+- `~/.claude/owner.md` (plugin, local and cloud sessions)
+- `.claude/owner.md` (installed into one project)
 
-Read it right after this protocol. If it's missing, stop and say so. Never copy owner details into the team repo, which is public.
+Read the first that exists, right after this protocol. If it's missing, stop and say so. Never copy owner details into the team repo, which is public.
 
 The owner's full principles are on the Notion page linked in the profile. Cite them by ID (A1, D2…). Project principles (P1…) live in the project Spec and add to them.
 
@@ -112,12 +112,14 @@ End every task with:
 - `TIME` (estimate vs actual)
 
 ## 12. Changing the team
-The source of truth is the public repo `cremjin/devteam`. Projects and the owner's machine hold installed copies; never edit those.
+Source of truth: the public repo `cremjin/devteam`. Never edit an installed copy.
 - **Timing.** Change instructions at retrospectives, not mid-project, unless a broken instruction is blocking work.
 - **Word caps.** This protocol stays at or under 1,500 words, and each agent or skill file at or under 700. A change that adds words must remove at least as many.
 - **Adding a rule is material.** Open a PR on a `proposal/<topic>` branch and email the owner the link. Merging is approval. Wording fixes, removals and corrections can go straight to `main`.
 - **Privacy.** Never put owner-identifying details in the repo.
-- **After a merge,** reinstall into the current project (section 13).
+- **After a merge,** update the plugin or reinstall (section 13).
 
 ## 13. Installing
-`bash <devteam>/install.sh <project-root> <owner.md>` copies the agents, the skills and the owner profile into `<project-root>/.claude/`, writes `.claude/devteam-version`, and gitignores `.devteam/drafts/`. Commit and push. Only install an owner profile into **private** repos. New files register in the next session.
+**As a plugin (default).** The repo is its own plugin and marketplace, so it loads in every repo without being copied in. Enable `devteam` on claude.ai, or `/plugin marketplace add cremjin/devteam` then `/plugin install devteam@devteam`. Skills are `/devteam:<name>`, agents `devteam:<name>`. Keep the owner profile at `~/.claude/owner.md`.
+
+**Into one project.** `bash <devteam>/install.sh <project-root> <owner.md>` copies the agents, skills and owner profile into `<project-root>/.claude/`, writes `.claude/devteam-version`, and gitignores `.devteam/drafts/`. Commit and push. **Private repos only.** New files register in the next session.

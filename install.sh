@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Install or update the dev team.
+# Prefer the plugin (see README); use this to pin a copy into one project.
 #   bash install.sh <project-root> <owner.md>   -> <project-root>/.claude/  (commit it; private repos only)
 #   bash install.sh ~ <owner.md>                -> ~/.claude/               (local sessions)
 # The owner profile defaults to ~/.claude/owner.md if not given.
@@ -15,8 +16,8 @@ SKILLS="devteam interview principles idea protocol google-workspace-automation"
 [ "$SRC" = "$TARGET" ] && { echo "Target is the team repo itself; nothing to install."; exit 0; }
 
 mkdir -p "$TARGET/.claude/agents" "$TARGET/.claude/skills"
-for a in $AGENTS; do cp "$SRC/.claude/agents/$a.md" "$TARGET/.claude/agents/"; done
-for s in $SKILLS; do rm -rf "$TARGET/.claude/skills/$s"; cp -R "$SRC/.claude/skills/$s" "$TARGET/.claude/skills/"; done
+for a in $AGENTS; do cp "$SRC/agents/$a.md" "$TARGET/.claude/agents/"; done
+for s in $SKILLS; do rm -rf "$TARGET/.claude/skills/$s"; cp -R "$SRC/skills/$s" "$TARGET/.claude/skills/"; done
 
 # Owner profile holds personal details: copy it unless it already is the target file.
 if [ -f "$OWNER" ]; then
