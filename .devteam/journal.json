@@ -2,7 +2,7 @@
   "project": "devteam v2",
   "ticketPrefix": "DT2",
   "mode": "sprint",
-  "phase": "build",
+  "phase": "qa",
   "pages": {
     "project": "https://app.notion.com/p/3f6d80d8e61f81779d18cbc006ad5c49",
     "spec": "https://app.notion.com/p/3f6d80d8e61f812b917ec3a323a9dabb",
