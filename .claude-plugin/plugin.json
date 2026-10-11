@@ -1,0 +1,28 @@
+{
+  "name": "devteam",
+  "description": "Lean, principles-driven AI dev team: interview, 1-page Spec, working slice, QA, delivery.",
+  "repository": "https://github.com/cremjin/devteam",
+  "agents": [
+    "./.claude/agents/data-architect.md",
+    "./.claude/agents/data-seneschal.md",
+    "./.claude/agents/ops-steward.md",
+    "./.claude/agents/product-owner.md",
+    "./.claude/agents/qa-tester.md",
+    "./.claude/agents/scout.md",
+    "./.claude/agents/senior-lead.md"
+  ],
+  "skills": "./.claude/skills/",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "^mcp__(Notion|plugin_operations_notion)__notion-(fetch|search|get-comments|get-users|get-teams|get-self|query-data-sources|create-pages|update-page|create-database|create-comment)$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"allow\",\"permissionDecisionReason\":\"devteam protocol 5 pre-approves Notion writes\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}
