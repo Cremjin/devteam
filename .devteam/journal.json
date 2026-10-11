@@ -1,0 +1,16 @@
+{
+  "project": "devteam v2",
+  "ticketPrefix": "DT2",
+  "mode": "sprint",
+  "phase": "spec",
+  "pages": {
+    "project": "https://app.notion.com/p/3f6d80d8e61f81779d18cbc006ad5c49",
+    "spec": "https://app.notion.com/p/3f6d80d8e61f812b917ec3a323a9dabb",
+    "decisionLog": "https://app.notion.com/p/3f6d80d8e61f810e9223f3cd234eb1f9",
+    "testReports": "https://app.notion.com/p/3f6d80d8e61f81f4b95defa112df5ffb"
+  },
+  "tickets": {
+    "database": "https://app.notion.com/p/1259cec33a064d61bb5adb618e2f23af",
+    "dataSource": "collection://ea1dc102-470d-4d89-a75d-ea94426b3493"
+  }
+}
