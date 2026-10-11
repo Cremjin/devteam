@@ -27,7 +27,7 @@ You are the **product-owner**, interviewing the owner in the main session. The o
 
 ## Output
 1. **Principles page.** Rewrite it, keeping existing IDs stable so old decision logs still make sense. Include a short "why the owner builds" summary and the reference success and failure examples.
-2. **Owner profile.** Update the principles summary in the owner's private profile (`owner.md` in their private profile repo), then reinstall it into active projects.
+2. **Owner profile.** Update the principles summary on the Owner Profile page (protocol section 1).
 3. **Record.** Add one line to the General Ticket Ledger noting the revision.
 4. **Tell the owner** what changed, briefly.
 

@@ -5,11 +5,7 @@ description: The dev team's shared operating manual: owner profile, working meth
 # Dev Team Protocol
 
 ## 1. Owner profile
-The team works for one person, **the owner**. Everything personal (name, email, Notion IDs, tools and subscriptions, data boundaries, principles summary) lives in the owner profile:
-- in a project: `.claude/owner.md`
-- locally: `~/.claude/owner.md`
-
-Read it right after this protocol. If it's missing, stop and say so. Never copy owner details into the team repo, which is public.
+The team works for one person, **the owner**. Everything personal (name, email, Notion IDs, tools, data boundaries, principles summary) lives in the Notion page titled exactly **Owner Profile**. Load it right after this protocol: search Notion for that title and fetch the one exact match. Zero or several matches: stop and say so. Never copy owner details into the public team repo. `owner.example.md` is the page's template.
 
 The owner's full principles are on the Notion page linked in the profile. Cite them by ID (A1, D2…). Project principles (P1…) live in the project Spec and add to them.
 
@@ -22,7 +18,7 @@ The owner's full principles are on the Notion page linked in the profile. Cite t
 
 ## 3. Working method
 **Sprint mode (default)** works like a rapid-prototyping shop: build a working slice fast, put it in the owner's hands, adjust.
-1. Interview, then a 1-page Spec (the owner approves).
+1. Interview, then a 1-page Spec (approval or auto-approval: `/devteam` step 2).
 2. Build a working slice (senior-lead and helpers).
 3. One QA pass. The product-owner accepts or sends back a specific fix list.
 4. Deliver. Check in after about 2 days of use. The next slice comes from the Spec's Later list.
@@ -112,12 +108,12 @@ End every task with:
 - `TIME` (estimate vs actual)
 
 ## 12. Changing the team
-The source of truth is the public repo `cremjin/devteam`. Projects and the owner's machine hold installed copies; never edit those.
+The source of truth is the public repo `cremjin/devteam`. Never edit installed copies.
 - **Timing.** Change instructions at retrospectives, not mid-project, unless a broken instruction is blocking work.
 - **Word caps.** This protocol stays at or under 1,500 words, and each agent or skill file at or under 700. A change that adds words must remove at least as many.
 - **Adding a rule is material.** Open a PR on a `proposal/<topic>` branch and email the owner the link. Merging is approval. Wording fixes, removals and corrections can go straight to `main`.
 - **Privacy.** Never put owner-identifying details in the repo.
-- **After a merge,** reinstall into the current project (section 13).
+- **After a merge,** the plugin updates from the repo (section 13).
 
 ## 13. Installing
-`bash <devteam>/install.sh <project-root> <owner.md>` copies the agents, the skills and the owner profile into `<project-root>/.claude/`, writes `.claude/devteam-version`, and gitignores `.devteam/drafts/`. Commit and push. Only install an owner profile into **private** repos. New files register in the next session.
+The team is a plugin, installed once per account (see README); projects hold no team files. Its hook pre-approves Notion reads and the section 5 writes; delete, move and duplicate still prompt.
