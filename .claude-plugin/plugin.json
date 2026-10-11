@@ -15,11 +15,11 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "^mcp__(Notion|plugin_operations_notion)__notion-(fetch|search|get-comments|get-users|get-teams|get-self|query-data-sources|create-pages|update-page|create-database|create-comment)$",
+        "matcher": "^mcp__(Notion|plugin_operations_notion)__notion-(fetch|search|get-comments|get-users|get-teams|get-self|get-async-task|get-tool-access|get-enabled-skills|get-file-download-urls|download-attachment|list-recent-pages|list-favorite-pages|list-private-pages|list-shared-pages|memory-search|query-data-sources|query-multiple-data-sources|query-meeting-notes|create-pages|update-page|create-database|create-comment)$",
         "hooks": [
           {
             "type": "command",
-            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"allow\",\"permissionDecisionReason\":\"devteam protocol 5 pre-approves Notion writes\"}}'"
+            "command": "echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"allow\",\"permissionDecisionReason\":\"devteam protocol 5: Notion reads and pre-approved writes\"}}'"
           }
         ]
       }
