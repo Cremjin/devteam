@@ -31,6 +31,7 @@ A lean, principles-driven AI software development team for Claude Code: plain ag
 | `product-owner` | opus | 1-page spec, acceptance, check-in, conflicts; your advocate |
 | `senior-lead` | opus | Builds with the least code, delegates by model, deploys |
 | `qa-tester` | sonnet | One test pass per slice, plus a security check |
+| `reviewer` | opus | Independent, read-only review of test pre-registrations and results |
 | `data-seneschal` | sonnet | Project setup, ticket triage, retrospectives that cut process |
 | `data-architect` | opus | R&D mode: 1-page architecture and cost |
 | `scout` | sonnet | Checks whether something already solves it |

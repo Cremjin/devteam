@@ -9,7 +9,7 @@ SRC="$(cd "$(dirname "$0")" && pwd)"
 TARGET="$(cd "${1:?usage: bash install.sh <project-root | ~> [owner.md]}" && pwd)"
 OWNER="${2:-$HOME/.claude/owner.md}"
 
-AGENTS="data-seneschal product-owner senior-lead data-architect qa-tester scout ops-steward"
+AGENTS="data-seneschal product-owner senior-lead data-architect qa-tester scout ops-steward reviewer"
 SKILLS="devteam interview principles idea protocol google-workspace-automation"
 
 [ "$SRC" = "$TARGET" ] && { echo "Target is the team repo itself; nothing to install."; exit 0; }
