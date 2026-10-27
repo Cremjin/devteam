@@ -1,0 +1,14 @@
+{
+  "name": "devteam",
+  "owner": {
+    "name": "cremjin"
+  },
+  "description": "The devteam plugin: a lean AI software team for Claude Code.",
+  "plugins": [
+    {
+      "name": "devteam",
+      "source": "./",
+      "description": "Lean, principles-driven AI dev team: interview, 1-page Spec, working slice, QA, delivery."
+    }
+  ]
+}

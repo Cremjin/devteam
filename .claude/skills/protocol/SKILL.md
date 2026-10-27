@@ -5,11 +5,7 @@ description: The dev team's shared operating manual: owner profile, working meth
 # Dev Team Protocol
 
 ## 1. Owner profile
-The team works for one person, **the owner**. Everything personal (name, email, Notion IDs, tools and subscriptions, data boundaries, principles summary) lives in the owner profile:
-- in a project: `.claude/owner.md`
-- locally: `~/.claude/owner.md`
-
-Read it right after this protocol. If it's missing, stop and say so. Never copy owner details into the team repo, which is public.
+The team works for one person, **the owner**. Everything personal (name, email, Notion IDs, tools, data boundaries, principles summary) lives in the Notion page titled exactly **Owner Profile**. Load it right after this protocol: search Notion for that title and fetch the one exact match. Zero or several matches: stop and say so. Never copy owner details into the public team repo. `owner.example.md` is the page's template.
 
 Full principles are on the Notion page in the profile; cite by ID (A1, D2…). Project principles (P1…) live in the Spec.
 
@@ -22,7 +18,7 @@ Full principles are on the Notion page in the profile; cite by ID (A1, D2…). P
 
 ## 3. Working method
 **Sprint mode (default)** works like a rapid-prototyping shop: build a working slice fast, put it in the owner's hands, adjust.
-1. Interview, then a 1-page Spec (the owner approves).
+1. Interview, then a 1-page Spec (approval or auto-approval: `/devteam` step 2).
 2. Build a working slice (senior-lead and helpers).
 3. One QA pass. The product-owner accepts or sends back a specific fix list.
 4. **Statistical tests:** the `reviewer` (not the agent that designed or ran the test) reviews every pre-registration after it's written and every result before the owner sees either. Its objections go to the owner unedited.
@@ -48,9 +44,9 @@ Full principles are on the Notion page in the profile; cite by ID (A1, D2…). P
 Interviews run in the main session; subagents can't reach the owner.
 
 ## 5. Autonomy and guardrails
-**Without asking:** commit, push, open PRs, merge, deploy, and write the team's own Notion records.
+**Without asking:** commit, push, open PRs, merge, deploy, and write to any Notion page, the owner's included.
 
-**Only under an owner-approved action policy** (listed in the Spec): sending email, changing the calendar, writing to the owner's other Sheets, Drive or Notion pages. Each policy's mode is `per-instance` (ask, batched) or `automatic`.
+**Only under an owner-approved action policy** (listed in the Spec): sending email, changing the calendar, writing to the owner's Sheets or Drive. Each policy's mode is `per-instance` (ask, batched) or `automatic`.
 
 **Email to anyone but the owner** must include "(Written Autonomously by an Agent)" and needs owner approval every time, unless a policy covers that exact message type.
 
@@ -114,12 +110,12 @@ End every task with:
 - `TIME` (estimate vs actual)
 
 ## 12. Changing the team
-The source of truth is the public repo `cremjin/devteam`. Projects and the owner's machine hold installed copies; never edit those.
+The source of truth is the public repo `cremjin/devteam`. Never edit installed copies.
 - **Timing.** Change instructions at retrospectives, not mid-project, unless a broken instruction is blocking work.
 - **Word caps.** This protocol stays at or under 1,500 words, and each agent or skill file at or under 700. A change that adds words must remove at least as many.
 - **Adding a rule is material.** Open a PR on a `proposal/<topic>` branch and email the owner the link. Merging is approval. Wording fixes, removals and corrections can go straight to `main`.
 - **Privacy.** Never put owner-identifying details in the repo.
-- **After a merge,** reinstall into the current project (section 13).
+- **After a merge,** the plugin updates from the repo (section 13).
 
 ## 13. Installing
-`bash <devteam>/install.sh <project-root> <owner.md>` copies the agents, the skills and the owner profile into `<project-root>/.claude/`, writes `.claude/devteam-version`, and gitignores `.devteam/drafts/`. Commit and push. Only install an owner profile into **private** repos. New files register in the next session.
+The team is a plugin, installed once per account (see README); projects hold no team files. Its hook pre-approves Notion reads and the section 5 writes; delete, move and duplicate still prompt.
