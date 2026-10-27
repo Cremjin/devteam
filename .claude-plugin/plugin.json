@@ -8,6 +8,7 @@
     "./.claude/agents/ops-steward.md",
     "./.claude/agents/product-owner.md",
     "./.claude/agents/qa-tester.md",
+    "./.claude/agents/reviewer.md",
     "./.claude/agents/scout.md",
     "./.claude/agents/senior-lead.md"
   ],
