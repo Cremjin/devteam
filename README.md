@@ -5,13 +5,14 @@ A lean, principles-driven AI software development team for Claude Code, packaged
 **How it works.** Like a rapid-prototyping shop: a short interview, a 1-page spec, a working slice built with as little code as possible, one QA pass, delivery, then a check-in after use. R&D mode adds an experiment and an architecture note when feasibility is uncertain.
 
 ## Setup
-Install once per account.
-1. In Notion, create a page titled exactly **Owner Profile** under Dev Team HQ, from `owner.example.md`.
-2. On claude.ai: **Customize > Plugins > Add > Add marketplace**, enter `cremjin/devteam`, turn on **Sync automatically**, add **devteam**. It syncs to Claude Code sessions on that account, including claude.ai/code.
-3. Connect Notion under **Customize > Connectors**.
+1. In Notion, create a page titled exactly **Owner Profile** under Dev Team HQ, from `owner.example.md`. Connect Notion under claude.ai **Customize > Connectors**.
+2. **Cloud (claude.ai/code):** `/plugin` doesn't exist there. Edit your cloud environment (environment menu in the session title bar > Edit) and add to **Setup script**:
+   ```bash
+   claude plugin marketplace add cremjin/devteam && claude plugin install devteam@devteam || true
+   ```
+   Every repo using that environment gets the team. Updates arrive when the environment cache rebuilds (script edit, or about weekly).
+3. **Local CLI:** `/plugin marketplace add cremjin/devteam`, then `/plugin install devteam@devteam`. Desktop app: **+ > Plugins > Add plugin**.
 4. In any repo, run `/devteam`.
-
-Not signed in to claude.ai? `/plugin marketplace add cremjin/devteam`, then `/plugin install devteam@devteam`.
 
 Notion reads and writes run without prompts; delete, move and duplicate still ask.
 
